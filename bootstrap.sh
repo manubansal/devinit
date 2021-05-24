@@ -20,7 +20,7 @@ echo "creating the workspace folder if needed..."
 
 # clone mbhome and tell me continue with bootstrap using that repo
 echo "cloning mbhome if not already present..."
-[[ -d mbhome ]] || git clone git@github.com:manubansal/mbhome.git
+[[ -d mbhome ]] || git clone git@bitbucket.org:manubansal/mbhome.git
 
 # tell me to continue setup using mbhome
 echo "now continue setting up the dev environment by following mbhome/README.md"
