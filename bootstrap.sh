@@ -8,6 +8,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
     && read && echo \
     )
 
+# fail and exit if key file still not present
+[[ -f ~/.ssh/mbkey ]] || ( echo "NO mbkey FOUND STILL! BAILING OUT." && exit 1 )
+
+# set the right perms and add to ssh keys
+chmod 400 ~/.ssh/mbkey && ssh-add ~/.ssh/mbkey
+
 # create the workspace folder and go there
 echo "creating the workspace folder if needed..."
 ( [[ -d ~/workspace ]] || mkdir -p ~/workspace ) && cd ~/workspace
